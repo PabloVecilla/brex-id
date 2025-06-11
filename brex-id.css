@@ -1,0 +1,305 @@
+/********************
+    CSS GENERAL: 
+********************/
+:root {
+    /* Variables de color */
+    --color-primary: #1e3a8a;     /* Deep blue: navbar, key accents */
+    --color-secondary: #3b82f6;   /* Lighter blue: hover, secondary buttons */
+    --color-accent: #10b981;      /* Teal/green accent (optional) */
+    --color-danger: rgb(255, 0, 98);
+    
+    --color-bg-light: #f3f4f6;    /* Light section background */
+    --color-bg-dark: #111827;     /* For future dark mode */
+    --color-card-bg: #ffffff;     /* Default card background */
+  
+    --color-text-main: #1f2937;   /* Primary text color (dark gray) */
+    --color-text-muted: #6b7280;  /* Secondary/muted text (light gray) */
+    
+    /* Variables de espacio para margen y padding */
+    --spacing-xs: 4px; 
+    --spacing-sm: 8px; 
+    --spacinng-md: 16px; 
+    --spacing-lg: 24px; 
+    --spacing-xl: 32; 
+
+    --content-width: 80vw;
+    --card-max-width: 18rem; 
+
+    /* tipografía y tamaños */
+    --font-family-base: 'Sagoe UI', sans-serif; 
+    --font-size-base: 1rem; 
+    --font-size-sm: 0.875rem; 
+    --font-size-lg: 1.75rem; 
+    --font-weight-bold: 700; 
+
+    /* Bordes y sombras */
+    --border-radius: 1rem;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    --border: 1px solid #e5e7eb;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family-base);
+    display: flex;
+    flex-direction: column;
+}
+
+/*  CONTENEDOR PRINCIPAL */
+.page_wrap{
+    flex: 1;
+    width: var(--content-width);
+    margin: auto;
+    padding-top: 3rem;
+}
+
+/*****************
+     NAVbar 
+*****************/
+.navbar {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: 3rem;
+}
+.navbar a{
+    margin: 0 var(--spacing-sm);
+}
+.navbar a:hover{
+    font-weight: var(--font-weight-bold);
+}
+.navbar span{
+    width: 10vw;
+}
+.search-input{
+    width: 18rem;
+}
+
+/**************
+    CABECERAS
+**************/
+h1{
+    margin-top: calc(var(--spacing-xl) + 1rem);
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+}
+
+/******************************
+            BOTONES: 
+******************************/
+.btn{
+    all: unset; 
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    font-weight: 400;
+}
+/* boton principal */
+.btn-primary{
+    background-color: var(--color-primary);
+    color: white;
+}
+.btn-primary:hover{
+    font-weight: 600;
+}
+/* botón borde */
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+.btn-outline:hover{
+    background-color: var(--color-primary);
+    color: white;
+}
+/* botones de borrado */
+.btn-danger {
+    background-color: var(--color-danger);
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #a10000;
+    font-weight: 600;
+}
+
+/*****************************
+          HOME PAGE: 
+*****************************/
+/* TEXTO DESCRIPTIVO DE LA HOME */
+.about {
+    height: 50vh;
+    overflow: scroll;
+}
+/* FOTO dcha. texto descriptivo */
+.aboutPic{
+    height: 50vh;
+    overflow: hidden;
+}
+.aboutPic img {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: 25% 25%; 
+}
+/**************************
+    ESTILOS TARJETAS 
+**************************/
+.card_wrap{
+    height: 22rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.card_wrap a{
+    text-decoration: none;
+}
+.card_wrap a:hover{
+    cursor: pointer;
+}
+
+.card{
+    margin: var(--spacing-sm);
+    background-color: var(--color-card-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius); 
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    gap: var(--spacing-xs);
+}
+.card:hover{
+    box-shadow: none;
+}
+.img_wrap{
+    width: 100%;
+    height: 12rem;
+}
+.card-img-top{ 
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    height: 10rem;
+    overflow: auto;
+}
+.texto_discreto {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/***************************
+    PÁGINA DE EVENTOS 
+****************************/
+.content_wrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: auto;
+    padding: var(--space-md);
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius);
+}
+
+/**************************************
+    PÁGINA DETALLE EVENTO/ARTÍCULO
+**************************************/
+img[class="evento_img"]{
+    width: 95%;
+    margin: var(--spacing-sm);
+    border-radius: var(--border-radius);
+}
+.button_wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 3px 2%;
+}
+
+/***********************
+    PÁGINA DE ADMIN
+***********************/
+.admin_form_wrap{
+    width: 50%;
+    margin: auto; 
+    padding: var(--spacing-sm);
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+.admin_form_wrap p{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.admin_form_wrap input {
+    width: 60%;
+}
+
+.admin_form_wrap button {
+    width: 70%;
+    margin: auto;
+}
+
+/******************
+     FOOTER 
+******************/
+.footer *{
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    color: white;
+    background-color: black;
+    margin-top: var(--spacinng-md);
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 20rem;
+
+}
+/* Logo UCM */
+.footer .img_wrap{
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+}
+.footer img{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: var(--spacing-sm);
+}
+.patrocinio{
+    width: 60%;
+}
+.ltd{
+    width: 15%;
+    font-size: var(--font-size-sm);
+}
