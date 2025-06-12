@@ -1,5 +1,4 @@
 <?php
-require_once "valida_usuario.php";//validación de usuario con rol admin 
 require_once "validaciones.php";// Importa las funciones para validar campos 
 // Conecto a la base de datos: 
 require_once "conexion.php"; 
@@ -8,7 +7,7 @@ require_once "conexion.php";
 session_set_cookie_params([
     'lifetime' => 0, 
     'path' => '/', 
-    'secure' => isset($_SERVER['HTTPS']),
+    'secure' => true,
     'httponly' => true, 
     'samesite' => 'Strict'
 ]); 
@@ -34,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if($user = $result->fetch_assoc()) {
             // usar password_verify para contraseñas: 
+                
                 if (password_verify($pass, $user['pass'])) {
                     // Regenero el id de sesión: 
                     session_regenerate_id(true); 
@@ -43,18 +43,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION["apellidos"] = $user["apellidos"]; 
                     $_SESSION["rol"] = $user["rol"]; 
 
+                    require_once "valida_usuario.php";//validación de usuario con rol admin 
+
+
                     $stmt->close(); 
                     $conn->close(); 
 
                     header("location: admin.php"); 
                     exit; 
-                }
+                } else {
+                    // Contraseña incorrecta
+                    $stmt->close(); 
+                    $conn->close(); 
+                    echo "<script>alert('Contraseña incorrecto'); window.location.href='login.php';</script>";
+                    exit; 
+                } 
+        } else {
+            //usuario incorrecto
+            $stmt->close();
+            $conn->close(); 
+            echo "<script>alert('Usuario no encontrado'); window.location.href='login.php'; </script>";
         }
-       // Si el login falla
-       $stmt->close(); 
-       $conn->close(); 
-       echo "<script>alert('Usuario o contraseña incorrecto'); window.location.href='login.php';</script>";
-       exit; 
     } else {
         echo "<script> alert('Acceso no permitido'); window.location.href='login.php';</script>";
         exit; 

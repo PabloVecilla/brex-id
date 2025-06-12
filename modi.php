@@ -29,7 +29,7 @@ if (isset($_GET['id_eve'])) {
     } 
 ?>
 <div><h1 class="h1_home">Zona de administración de <?php echo $nombre ?></h1></div>
-<div class="admin_wrap">
+<div class="content_wrap">
 <div><form action="crud.php" method="post">
     <h2>Editar evento</h2>
     <input type="hidden" name="accion" value="mod_event">
@@ -59,7 +59,7 @@ elseif (isset($_GET['id_art'])) {
     } 
 ?>
 <div><h1 class="h1_home">Zona de administración de <?php echo $nombre ?></h1></div>
-<div class="admin_wrap">
+<div class="content_wrap">
 <div><form action="crud.php" method="post">
     <h2>Editar artículo</h2>
     <input type="hidden" name="accion" value="mod_art">

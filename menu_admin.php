@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $pageTitle ?? "Brex-id"; ?></title>
-    <link rel="stylesheet" href="brex-id.css?v=15">
+    <link rel="stylesheet" href="brex-id.css?v=55">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -25,13 +25,16 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="admin.php">Añadir Contenido</a>
+                    <a class="nav-link" href="anadir_art.php">+Artículo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="ver_even.php">Mostrar eventos</a>
+                    <a class="nav-link" href="anadir_event.php">+Evento</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="ver_art.php">Mostrar artículos</a>
+                    <a class="nav-link" href="ver_even.php">Eventos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="ver_art.php">Artículos</a>
                   </li>
                   <li>
                     <form class="d-flex" role="search" action="buscar.php" method="get">

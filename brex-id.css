@@ -89,6 +89,7 @@ body {
 **************/
 h1{
     margin-top: calc(var(--spacing-xl) + 1rem);
+    margin-bottom: calc((--spacing-xl) + 1rem); 
     font-size: var(--font-size-lg);
     color: var(--color-primary);
 }
@@ -159,6 +160,19 @@ h1{
     object-fit: cover;
     object-position: 25% 25%; 
 }
+/*** WRAPPER GENERAL ****/
+.content_wrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 5rem auto;
+    padding: var(--space-md);
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius);
+}
+
 /**************************
     ESTILOS TARJETAS 
 **************************/
@@ -203,21 +217,6 @@ h1{
 .texto_discreto {
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
-}
-
-/***************************
-    PÁGINA DE EVENTOS 
-****************************/
-.content_wrap{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
-    margin: auto;
-    padding: var(--space-md);
-    background-color: var(--color-bg-light);
-    border-radius: var(--border-radius);
 }
 
 /**************************************
